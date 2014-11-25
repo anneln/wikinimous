@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+10.times do
+  article = Article.new({
+    title: Faker::Lorem.words(rand(2..10)).join(' '),
+    content: Faker::Lorem.paragraphs(rand(2..8)).join('\n')
+  })
+  article.save
+end
+
+
+
